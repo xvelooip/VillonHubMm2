@@ -216,7 +216,7 @@ local function getRoles()
     local success, data = pcall(function()
         return ReplicatedStorage:FindFirstChild("GetPlayerData", true):InvokeServer()
     end)
-    if not success or not data then return {}
+    if not success or not data then return {} end -- <- ДОБАВЛЕН end
     local roles = {}
     for plr, plrData in pairs(data) do
         if not plrData.Dead then
